@@ -31,4 +31,18 @@
 
 -- SELECT name FROM restaurant WHERE '2020/03/09' - lastTimeEaten > 7 AND stars = 5; 
 
+-- SELECT name FROM restaurant ORDER BY distance;
 
+-- SELECT name FROM restaurant ORDER BY distance LIMIT 2;
+ 
+--  SELECT name FROM restaurant ORDER BY stars LIMIT 2;
+
+-- SELECT name FROM restaurant WHERE distance < 2 ORDER BY stars  LIMIT 2;
+
+-- SELECT COUNT(*) FROM restaurant;
+
+-- SELECT category, COUNT(category) AS category FROM restaurant GROUP BY category;
+
+-- SELECT category, AVG(stars) AS stars FROM restaurant GROUP BY category;
+
+-- SELECT category, MAX(stars) AS stars FROM restaurant GROUP BY category;
