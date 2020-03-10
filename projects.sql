@@ -352,12 +352,56 @@
 -- tech.name;
 
 -- #10
-SELECT project.name
-FROM 
-project
-LEFT OUTER JOIN
-project_uses_tech
-ON
-tech.id = project_uses_tech.tech_id
-GROUP BY
-tech.name;
+-- SELECT project.name
+-- from project
+-- LEFT OUTER JOIN project_uses_tech
+-- ON project.id = project_uses_tech.project_id
+-- WHERE project_uses_tech.tech_id IS NOT NULL
+-- GROUP BY project.name;
+
+-- #11
+-- SELECT project.name
+-- from project
+-- LEFT OUTER JOIN project_uses_tech
+-- ON project.id = project_uses_tech.project_id
+-- WHERE project_uses_tech.tech_id IS NULL
+-- GROUP BY project.name;
+
+-- #12 
+-- SELECT project.name, COUNT(project_uses_tech.tech_id) AS techs
+-- from 
+-- project
+-- LEFT OUTER JOIN
+-- project_uses_tech
+-- ON
+-- project.id = project_uses_tech.project_id
+-- GROUP BY
+-- project.name
+-- ORDER BY
+-- techs DESC;
+
+-- #13
+-- SELECT tech.name, COUNT(project_uses_tech.project_id) AS projects
+-- from
+-- tech
+-- LEFT OUTER JOIN
+-- project_uses_tech
+-- ON
+-- tech.id = project_uses_tech.tech_id
+-- GROUP BY
+-- tech.name
+-- ORDER BY
+-- projects DESC;
+
+-- #14 
+-- SELECT tech.name, AVG(project_uses_tech.project_id) AS avgProj
+-- FROM
+-- tech
+-- LEFT OUTER JOIN
+-- project_uses_tech
+-- ON
+-- tech.id = project_uses_tech.tech_id
+-- GROUP BY
+-- tech.name
+-- ORDER BY 
+-- avgProj DESC;
